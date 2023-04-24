@@ -1,6 +1,6 @@
 {
   "name": "bskycheck DEV",
-  "version": "0.0.3-pre",
+  "version": "0.0.3",
   "manifest_version": 3,
   "homepage_url": "https://github.com/jcsalterego/bskycheck",
   "content_scripts": [
