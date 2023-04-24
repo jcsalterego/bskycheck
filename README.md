@@ -36,6 +36,20 @@ Otherwise, a red X will appear.
 
 Next time @ me ([@jcsalterego.bsky.social](https://bsky.app/profile/jcsalterego.bsky.social))
 
+## Changelog
+
+### 0.0.3
+
+* Remove underscores from Twitter username before checking.
+
+### 0.0.2
+
+* Use staging.bsky.app for now!
+
+### 0.0.1
+
+* First cut.
+
 ## LICENSE
 
 [2-Clause BSD](LICENSE)
