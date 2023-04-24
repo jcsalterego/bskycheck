@@ -68,7 +68,8 @@ function reqListener(twitterUsername) {
 }
 
 function getBskySocialProfileURL(bskyHandle) {
-  return `https://bsky.app/profile/${bskyHandle}`;
+  // Use staging before full launch
+  return `https://staging.bsky.app/profile/${bskyHandle}`;
 }
 
 function getBskyHandle(twitterUsername) {
