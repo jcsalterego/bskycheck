@@ -6,7 +6,7 @@ A Chrome Extension to check if Twitter users have the same handle on `bsky.socia
 
 # A New Link Appears
 
-Click on the Question Mark to check the handle on `bsky.social`.
+Click on the question mark to check the handle on `bsky.social`.
 
 ![](docs/question.png)
 
@@ -24,8 +24,12 @@ Otherwise, a red X will appear.
 
 ## Installation
 
-1. Download the latest release `bskycheck-x.x.x.zip` from [Releases page](https://github.com/jcsalterego/bskycheck/releases/).
-2. Navigate to `chrome://extensions` and load it as an unpackaged extension. You can drag the ZIP or extracted folder right onto the page.
+1. Download the latest release `bskycheck-x_y_z.zip` from [Releases page](https://github.com/jcsalterego/bskycheck/releases/).
+![](docs/releases.png)
+2. Navigate to `chrome://extensions`, enable Developer Mode. Click on
+"Load unpacked" or drag the ZIP/folder right onto the page.
+![](docs/extensions.png)
+
 3. Navigate to [Twitter](https://www.twitter.com/home/).
 
 ## FAQ: I looked at the source code and it's not pretty
