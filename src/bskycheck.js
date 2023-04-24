@@ -73,7 +73,8 @@ function getBskySocialProfileURL(bskyHandle) {
 }
 
 function getBskyHandle(twitterUsername) {
-  return twitterUsername.toLowerCase() + `.bsky.social`;
+  // remove underscores ("the Grady_Booch rule")
+  return twitterUsername.toLowerCase().replaceAll(/_/gi, "") + `.bsky.social`;
 }
 
 function bskyCheck(twitterUsername) {
