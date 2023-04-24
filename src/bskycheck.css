@@ -1,0 +1,20 @@
+
+a.bskycheck-link {
+  text-decoration: none;
+}
+
+a.bskycheck-link.success {
+  color: rgb(0, 186, 124);
+}
+
+a.bskycheck-link.failure {
+  color: #721c24;
+}
+
+a.bskycheck-link span:hover {
+  text-decoration: underline !important;
+}
+
+a.bskycheck-link span {
+  text-decoration: none !important;
+}

@@ -1,0 +1,13 @@
+{
+  "name": "bskycheck DEV",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "homepage_url": "https://github.com/jcsalterego/bskycheck",
+  "content_scripts": [
+    {
+      "matches": ["https://*.twitter.com/*"],
+      "css": ["bskycheck.css"],
+      "js": ["bskycheck.js"]
+    }
+  ]
+}
