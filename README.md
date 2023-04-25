@@ -38,6 +38,10 @@ Next time @ me ([@jcsalterego.bsky.social](https://bsky.app/profile/jcsalterego.
 
 ## Changelog
 
+### 0.0.4
+
+* Support for other pages (followers, following, list members).
+
 ### 0.0.3
 
 * Remove underscores from Twitter username before checking.
