@@ -32,10 +32,6 @@ Otherwise, a red X will appear.
 
 3. Navigate to [Twitter](https://www.twitter.com/home/).
 
-## FAQ: I looked at the source code and it's not pretty
-
-Next time @ me ([@jcsalterego.bsky.social](https://bsky.app/profile/jcsalterego.bsky.social))
-
 ## Changelog
 
 ### 0.0.4
@@ -57,3 +53,7 @@ Next time @ me ([@jcsalterego.bsky.social](https://bsky.app/profile/jcsalterego.
 ## LICENSE
 
 [2-Clause BSD](LICENSE)
+
+## Author
+
+[@jcsalterego.bsky.social](https://bsky.app/profile/jcsalterego.bsky.social)
