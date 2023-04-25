@@ -103,6 +103,48 @@ function bskyCheckClick(ev) {
 }
 
 function bskyCheckAll() {
+  bskyCheckTimeline();
+  bskyCheckFriends();
+}
+
+function bskyCheckFriends() {
+  const path =
+    "div:not(.altered) > a[role=link] > div > div > span:not(.altered)";
+  let elems = document.querySelectorAll(path);
+  elems = Array.from(elems).filter((elem) => elem.innerText.startsWith("@"));
+  elems.forEach((elem) => {
+    let elemUsername = elem.innerText.substring(1);
+    elem.classList.add("altered");
+    let template = getAncestor(elem, 5);
+    template.classList.add("target");
+    let clone = template.cloneNode(true);
+
+    // remove Follows You as needed
+    let spans = clone.querySelectorAll("span");
+    for (let span of spans) {
+      if (span.innerText.match(/follows you/i)) {
+        getAncestor(span, 2).remove();
+      }
+    }
+
+    clone.classList.add("altered");
+    let span = clone.querySelector("span");
+    span.innerHTML = `<a class="bskycheck-link">${ALL_SVGS}<span>bsky.social</span></a>`;
+    let aElem = span.querySelector("a");
+    aElem
+      .querySelectorAll("svg")
+      .forEach((svg) => (svg.style.display = "none"));
+    aElem.querySelector("svg.bi-question-circle").style.display = "inline";
+    aElem.addEventListener("click", bskyCheckClick);
+    aElem.style.whiteSpace = "nowrap";
+    aElem.style.zIndex = 20;
+    aElem.title = `Check if ${elemUsername} is on bsky.social`;
+    aElem.dataset.username = elemUsername;
+    template.parentElement.append(clone);
+  });
+}
+
+function bskyCheckTimeline() {
   let elems = document.querySelectorAll("a > div > span:not(.altered)");
   elems = Array.from(elems).filter((elem) => elem.innerText.startsWith("@"));
   for (let elem of elems) {
