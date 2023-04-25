@@ -98,6 +98,7 @@ function bskyCheckClick(ev) {
       bskyCheck(username);
     }
   }
+  ev.preventDefault();
   return false;
 }
 
