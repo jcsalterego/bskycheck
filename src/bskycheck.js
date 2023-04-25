@@ -115,9 +115,9 @@ function bskyCheckAll() {
         let cloned = sep.cloneNode();
         cloned.innerHTML = `· <a class="bskycheck-link">${ALL_SVGS}<span>bsky.social</span></a>`;
         let aElem = cloned.querySelector("a");
-        Array.from(aElem.querySelectorAll("svg")).forEach(
-          (svg) => (svg.style.display = "none")
-        );
+        aElem
+          .querySelectorAll("svg")
+          .forEach((svg) => (svg.style.display = "none"));
         aElem.querySelector("svg.bi-question-circle").style.display = "inline";
         aElem.addEventListener("click", bskyCheckClick);
         aElem.style.whiteSpace = "nowrap";
