@@ -87,18 +87,18 @@ function bskyCheck(twitterUsername) {
 }
 
 function bskyCheckClick(ev) {
-  // ev is the svg
+  // ascend ancestors until the <a> tag
   let target = ev.target;
   while (target.tagName !== "A") {
     target = target.parentElement;
   }
-  if (target.href !== undefined) {
+  if (target.href === "") {
     let username = target.dataset.username;
-    if (username !== undefined) {
+    if (username != null) {
       bskyCheck(username);
     }
+    ev.preventDefault();
   }
-  ev.preventDefault();
   return false;
 }
 
