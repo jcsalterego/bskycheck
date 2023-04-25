@@ -102,6 +102,18 @@ function bskyCheckClick(ev) {
   return false;
 }
 
+function createCheckLink(elem, elemUsername, prefix="") {
+  elem.innerHTML = prefix+`<a class="bskycheck-link">${ALL_SVGS}<span>bsky.social</span></a>`;
+  let aElem = elem.querySelector("a");
+  aElem.querySelectorAll("svg").forEach((svg) => (svg.style.display = "none"));
+  aElem.querySelector("svg.bi-question-circle").style.display = "inline";
+  aElem.addEventListener("click", bskyCheckClick);
+  aElem.style.whiteSpace = "nowrap";
+  aElem.title = `Check if ${elemUsername} is on bsky.social`;
+  aElem.dataset.username = elemUsername;
+  return elem;
+}
+
 function bskyCheckAll() {
   bskyCheckTimeline();
   bskyCheckFriends();
@@ -129,17 +141,7 @@ function bskyCheckFriends() {
 
     clone.classList.add("altered");
     let span = clone.querySelector("span");
-    span.innerHTML = `<a class="bskycheck-link">${ALL_SVGS}<span>bsky.social</span></a>`;
-    let aElem = span.querySelector("a");
-    aElem
-      .querySelectorAll("svg")
-      .forEach((svg) => (svg.style.display = "none"));
-    aElem.querySelector("svg.bi-question-circle").style.display = "inline";
-    aElem.addEventListener("click", bskyCheckClick);
-    aElem.style.whiteSpace = "nowrap";
-    aElem.style.zIndex = 20;
-    aElem.title = `Check if ${elemUsername} is on bsky.social`;
-    aElem.dataset.username = elemUsername;
+    span = createCheckLink(span, elemUsername);
     template.parentElement.append(clone);
   });
 }
@@ -155,17 +157,7 @@ function bskyCheckTimeline() {
       let parent = getAncestor(elem, 1);
       let sep = container.querySelector("div[aria-hidden=true]");
       if (sep !== null) {
-        let cloned = sep.cloneNode();
-        cloned.innerHTML = `· <a class="bskycheck-link">${ALL_SVGS}<span>bsky.social</span></a>`;
-        let aElem = cloned.querySelector("a");
-        aElem
-          .querySelectorAll("svg")
-          .forEach((svg) => (svg.style.display = "none"));
-        aElem.querySelector("svg.bi-question-circle").style.display = "inline";
-        aElem.addEventListener("click", bskyCheckClick);
-        aElem.style.whiteSpace = "nowrap";
-        aElem.title = `Check if ${elemUsername} is on bsky.social`;
-        aElem.dataset.username = elemUsername;
+        let cloned = createCheckLink(sep.cloneNode(), elemUsername, "· ");
         container.append(cloned);
       }
     }
